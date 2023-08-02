@@ -1,18 +1,19 @@
 package com.example.demo_git.sorting;
 
-import static java.util.Arrays.asList;
-import static org.assertj.core.api.Assertions.assertThat;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.stream.Collectors;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import lombok.extern.slf4j.Slf4j;
-import org.junit.jupiter.api.Test;
+
+import static java.util.Arrays.asList;
+import static org.assertj.core.api.Assertions.assertThat;
 
 /**
  *
@@ -20,7 +21,17 @@ import org.junit.jupiter.api.Test;
 @Slf4j
 public class SortingTest {
 
-
+UserSortTest getUserSortTest(){
+    UserSortTest user = new UserSortTest("Иван", "Иванов", 106);
+    user.setAdress(new Adress("Пушкина", "Москва", "10"));
+    user.products.add(new Price("Горох", BigDecimal.TEN, 0));
+    user.products.add(new Price("Яблоко", BigDecimal.valueOf(10.22), 100));
+    user.products.add(new Price("Pickle", BigDecimal.valueOf(100.00), 100));
+    user.products.add(new Price("Арбуз", BigDecimal.TEN, 0));
+    user.products.add(new Price("Булка", BigDecimal.valueOf(1.22), 0));
+    user.products.add(new Price("Сок", BigDecimal.valueOf(10.00), 0));
+    return user;
+}
     List<UserSortTest> getTestDealers() {
         UserSortTest user = new UserSortTest("Иван", "Иванов", 106);
         user.setAdress(new Adress("Пушкина", "Москва", "10"));
@@ -173,4 +184,5 @@ assertThat(result.get(0).getProducts().get(2).getProductName()).isEqualTo("Ар�
             this.age = age;
         }
     }
+
 }
