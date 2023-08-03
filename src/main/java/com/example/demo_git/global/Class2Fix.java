@@ -4,5 +4,5 @@ package com.example.demo_git.global;
  *
  */
 
-public class Class2 {
+public class Class2Fix {
 }
