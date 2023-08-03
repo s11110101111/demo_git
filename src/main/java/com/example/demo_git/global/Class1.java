@@ -1,4 +1,4 @@
-package com.example.demo_git.gobal;
+package com.example.demo_git.global;
 
 /**
  *
